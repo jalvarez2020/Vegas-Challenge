@@ -1,0 +1,8 @@
+{
+  "name": "Vegas-Challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jalvarez2020/Vegas-Challenge.git",
+  "author": "Javier Alavrez <javieralvarez82@live.com>",
+  "license": "MIT"
+}
