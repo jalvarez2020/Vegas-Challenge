@@ -1,5 +1,5 @@
 {
-  "name": "Vegas-Challenge",
+  "name": "G4-Challenge",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/jalvarez2020/Vegas-Challenge.git",
@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "helmet": "^3.18.0",
     "knex": "^0.17.5",
+    "knex-postgis": "^0.8.0",
     "sqlite3": "^4.0.8"
   },
   "devDependencies": {
