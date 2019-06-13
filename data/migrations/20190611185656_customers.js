@@ -6,9 +6,9 @@ exports.up = function(knex, Promise) {
       table.string('First_name', 100).notNullable();
       table.string('Last_name', 100).notNullable();
       table.string('Email').unique().notNullable();
-      table.decimal('Latitude').notNullable();
-      table.decimal('Longitude').notNullable();
-      table.integer('IP').unique().notNullable();
+      table.float('Latitude').notNullable();
+      table.float('Longitude').notNullable();
+      table.float('IP').unique().notNullable();
   })
 };
 
