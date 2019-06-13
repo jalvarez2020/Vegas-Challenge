@@ -12,7 +12,9 @@
     "express": "^4.17.1",
     "helmet": "^3.18.0",
     "knex": "^0.17.5",
+    "knex-csv-seeder": "^0.4.1",
     "knex-postgis": "^0.8.0",
+    "reader": "^0.0.8",
     "sqlite3": "^4.0.8"
   },
   "devDependencies": {
