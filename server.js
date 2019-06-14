@@ -3,16 +3,17 @@ const db = require('./dbRoutes');
 const port = 5000 || localhost;
 
 
+
 //returns all customers in DB
-server.get('customers', (req, res) => {
-    db.getCustomers().then(customers => {
-        res.status(200).json(customers)
+server.get('/customers', (req, res) => {
+    db.getCustomers().then( customers => {
+        res.status(200).send(customers)
     })
     .catch(error => {message: error})
 })
 
 //returns single customer
-server.get('customers/:id', (req, res) => {
+server.get('/customers/:id', (req, res) => {
     const id = req.params.id;
     db.findById(id).then(customer => {
         res.status(200).json(customer);
