@@ -1,16 +1,16 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('customers', table => {
-      table.integer('id').primary()
+  return knex.schema.createTable('customer', table => {
+      table.integer('Id').primary()
       table.datetime('SignUpDate').defaultTo(knex.fn.now())
-      table.string('First_name', 100).notNullable();
-      table.string('Last_name', 100).notNullable();
+      table.string('First', 100).notNullable();
+      table.string('Last', 100).notNullable();
       table.string('Email').unique().notNullable();
-      table.double('Latitude').notNullable();
-      table.double('Longitude').notNullable();
-      table.integer('IP').notNullable();
+      table.string('Latitude').notNullable();
+      table.string('Longitude').notNullable();
+      table.string('IP').notNullable();
   })
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('customers')
+    return knex.schema.dropTableIfExists('customer')
 };

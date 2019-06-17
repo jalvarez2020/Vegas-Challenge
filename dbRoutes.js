@@ -3,23 +3,23 @@ const knexConfig = require('./knexfile.js');
 const db = knex(knexConfig.development);
 
 getCustomers = () => {
-    return db('customers');
+    return db('customer');
 }
 
-insertNew = (note) => {
-    return db('customers').insert(note);
+insertNew = (customer) => {
+    return db('customer').insert(customer);
 }
 
 findById = (id) => {
-    return db('customers').where('id', id).first();
+    return db('customer').where('id', id).first();
 }
 
 removeCustomer = (id) => {
-    return db('customers').where('id', id).del();
+    return db('customer').where('id', id).del();
 }
 
-updateCustomer = (id, note) => {
-    return db('customers').where('id', id,).update(note);
+updateCustomer = (id, customer) => {
+    return db('customer').where('id', id,).update(customer);
 }
 
 module.exports ={
