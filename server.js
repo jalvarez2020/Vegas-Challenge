@@ -1,10 +1,7 @@
 require('dotenv').config();
-const {server} = require('./serverConfig')
+const  server  = require('./serverConfig')
 const db = require('./dbRoutes');
 const port = process.env.PORT || 5000
-
-
-
 
 //returns all customers in DB
 
@@ -31,7 +28,7 @@ server.put('customers/update/:id', (req, res) => {
     const id = req.params.id;
     const customer = req.body;
     db.updateCustomer(id, customer).then(updateCustomer => {
-        res.status(201).json({message: "Customer information updated."})
+        res.status(200).json({message: "Customer information updated."})
     })
     .catch(error => {message: error})
 })
@@ -41,7 +38,7 @@ server.put('customers/update/:id', (req, res) => {
 server.post('/customers/signup', (req, res) => {
     const signup = req.body;
     db.insertNew(signup).then(newCustomer => {
-        res.status(201).send({message: "New customer successfully added."})
+        res.status(200).send({message: "New customer successfully added."})
     })
 })
 
