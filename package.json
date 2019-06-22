@@ -14,7 +14,6 @@
     "knex": "^0.17.5",
     "knex-csv-seeder": "^0.4.1",
     "npx": "^10.2.0",
-    "react-router-dom": "^5.0.1",
     "sqlite3": "^4.0.8"
   },
   "devDependencies": {
