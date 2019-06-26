@@ -19,17 +19,23 @@ const source = clients.map((client) => {
 })
 
 
-const initialState = { isLoading: false, results: [], value: '', selection: "", client: {...source} }
+const initialState = { isLoading: false, results: [], value: '', selection: '', client: {...source} }
 
 export default class Clients extends Component {
   state = initialState
 
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title, selection: result.title})
+  handleResultSelect = (e, { result
+  }) => {
+    console.log('SELECTION', result)
+    this.setState({
+      value: result.title,
+      selection: result
+
+    })
+  } 
 
   handleOnClick = (e) => {
-    this.setState({
-        selection: this.state.value
-    })
+    // console.log(this.state.client)
   }
 
   handleSearchChange = (e, { value }) => {
@@ -50,7 +56,7 @@ export default class Clients extends Component {
 
   render() {
     const { isLoading, value, results } = this.state
-    if(this.state.selection === "") {
+    if(this.state.selection === '') {
       return (
       <Grid textAlign='center'>
         <Grid.Column width={16} textAlign={'center'}>
@@ -73,7 +79,7 @@ export default class Clients extends Component {
       </Grid>)
     }
 
-    else if(this.state.isLoading) {
+    else if(!this.state.isLoading) {
     return (
       <Grid>
         <Grid.Column width={16} textAlign={'center'}>
@@ -88,18 +94,18 @@ export default class Clients extends Component {
             results={results}
             value={value}
             {...this.props}
-            onFocus={this.handleOnClick}
+            onMouseDown={this.handleOnClick}
           />
         </Grid.Column>
         <Grid.Column width={16} >
-          <Segment >
-           <Header textAlign={'center'}>Client Profile</Header>
-           <Card  textAlign={'center'}>
+          <Segment>
+           <Header>Client Profile</Header>
+           <Card>
                <Image src={faker.internet.avatar()}></Image>
             <Card.Content>
                     <Card.Header>{this.state.value}</Card.Header>
                     <Card.Meta>
-                        <span className='date'>Joined in {this.props.Email}</span>
+                        <span className='date'>Joined in {this.state.selection.created_at}</span>
                     </Card.Meta>
                     <Card.Description>
                         {this.state.value} is a musician living in Nashville.
