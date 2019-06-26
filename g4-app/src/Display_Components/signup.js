@@ -66,14 +66,12 @@ export default class Signup extends Component {
         
         
     }
-
-
     render() {
         console.log(publicIp)
         console.log("component", this.state)
         return (
             <div>
-                <Header as='h1' content='Sign Up New Customer'  textAlign='center' />
+           
                 <Container text width={5}>
                     <Form>
                         <Form.Field>

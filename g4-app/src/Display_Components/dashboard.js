@@ -32,7 +32,7 @@ export default class Dashboard extends Component {
         return (
             <Segment inverted >
                 <Header as='h1' id='heading' align='center'>Customer Dashboard</Header>
-            <Icon  size='large' name='align justify' onClick={this.handleHide} />
+            <Button color='black' size='large' name='align justify' onClick={this.handleHide}>Menu</Button>
                 <Segment inverted align='right'>
                 <Usermodal  />
                 </Segment>
@@ -46,7 +46,7 @@ export default class Dashboard extends Component {
             visible={show}
             >
                 <Grid.Column align='right'>
-                <Icon size='large' name='align justify' align='right' onClick={this.handleHide} inverted />
+                <Button color='black' size='large' name='align justify' onClick={this.handleHide}>Close</Button>
                 </Grid.Column>
            </Sidebar>
             <Segment columns={4} >
