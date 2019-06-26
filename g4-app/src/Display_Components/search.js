@@ -51,13 +51,14 @@ export default class Clients extends Component {
     const { isLoading, value, results } = this.state
 
     return (
+      
       <Grid>
         <Grid.Column width={16} textAlign={'center'}>
           <Search
             fluid
             loading={isLoading}
             onResultSelect={this.handleResultSelect}
-            placeholder='Search by First name or Last name'
+            placeholder='Search for Customers'
             onSearchChange={_.debounce(this.handleSearchChange, 500, {
               leading: true,
             } )}
@@ -69,7 +70,7 @@ export default class Clients extends Component {
         </Grid.Column>
         <Grid.Column width={16} >
           <Segment >
-           <Header textAlign={'center'}>Client Profile</Header>
+           {/* <Header textAlign={'center'}>Client Profile</Header>
            <Card  textAlign={'center'}>
                <Image src={faker.internet.avatar()}></Image>
             <Card.Content>
@@ -83,7 +84,7 @@ export default class Clients extends Component {
                     </Card.Content>
                     <Card.Content extra>
                     </Card.Content>
-           </Card>
+           </Card> */}
           </Segment>
         </Grid.Column>
       </Grid>

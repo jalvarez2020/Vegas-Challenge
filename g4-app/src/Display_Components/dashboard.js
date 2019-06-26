@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import faker from 'faker'
+import Usermodal from './userModal'
+import Clients from './search'
+import Signup from './signup'
 import '../index.css';
 import {
   Button,
@@ -26,10 +30,13 @@ export default class Dashboard extends Component {
     render() {
       const { show } = this.state
         return (
-            <Segment inverted>
+            <Segment inverted >
                 <Header as='h1' id='heading' align='center'>Customer Dashboard</Header>
-            
             <Icon  size='large' name='align justify' onClick={this.handleHide} />
+                <Segment inverted align='right'>
+                <Usermodal  />
+                </Segment>
+            
             <Sidebar
             as={Menu}
             animation='overlay'
@@ -42,8 +49,8 @@ export default class Dashboard extends Component {
                 <Icon size='large' name='align justify' align='right' onClick={this.handleHide} inverted />
                 </Grid.Column>
            </Sidebar>
-            <Segment columns={4}>
-              
+            <Segment columns={4} >
+              <Clients/>
             </Segment>
             </Segment>
            
