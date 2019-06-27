@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import faker from 'faker'
 import Usermodal from './userModal'
 import Clients from './search'
@@ -19,6 +20,7 @@ import {
 export default class Dashboard extends Component {
   state = {
     show: false,
+    Clients: []
   }
 
   handleHide = () => {
@@ -31,7 +33,10 @@ export default class Dashboard extends Component {
 
 
   componentDidMount(){
-    
+    axios.get(`http://localhost:4000/customers`)
+    .then(res => {this.setState({
+      Clients: res.data
+    })})
   }
 
     render() {
@@ -64,6 +69,11 @@ export default class Dashboard extends Component {
                 <GridRow>
                   <h1>Client List</h1>
                 </GridRow>
+                <Grid.Row>{this.state.Clients.map((client) => {
+                  return(<Grid.Row>
+                    <h1>{client.First}</h1>
+                  </Grid.Row>)
+                })}</Grid.Row>
               </Grid.Column>
             </Segment>
 
