@@ -75,7 +75,6 @@ export default class Clients extends Component {
             onClick={this.handleOnClick}
           />
         </Grid.Column>
-        <h1>Client Profile</h1>
       </Grid>)
     }
 

@@ -13,6 +13,7 @@ import {
   Segment,
   Sidebar,
   Icon,
+  GridRow,
 } from 'semantic-ui-react'
 
 export default class Dashboard extends Component {
@@ -27,11 +28,17 @@ export default class Dashboard extends Component {
 
   handleSidebarHide = () => this.setState({show: false})
 
+
+
+  componentDidMount(){
+    
+  }
+
     render() {
       const { show } = this.state
         return (
             <Segment inverted >
-                <Header as='h1' id='heading' align='center'>Customer Dashboard</Header>
+                <Header as='h1' id='heading' align='center'>CSR DASHBOARD</Header>
             <Button color='black' size='large' name='align justify' onClick={this.handleHide}>Menu</Button>
                 <Segment inverted align='right'>
                 <Usermodal  />
@@ -52,8 +59,15 @@ export default class Dashboard extends Component {
             <Segment columns={4} >
               <Clients/>
             </Segment>
+            <Segment>
+              <Grid.Column align='center'>
+                <GridRow>
+                  <h1>Client List</h1>
+                </GridRow>
+              </Grid.Column>
             </Segment>
-           
+
+            </Segment>
         )
     }
 }

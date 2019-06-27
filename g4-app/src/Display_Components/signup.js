@@ -41,7 +41,7 @@ export default class Signup extends Component {
         }
         !this.state.Checkbox ? alert('Please agree to terms and conditions') :
         axios.post(`http://localhost:4000/customers/signup`, newClient)
-        .then(res => {alert()})
+        .then(res => { alert("Successfully signed up client") })
 
     }
 
@@ -76,7 +76,7 @@ export default class Signup extends Component {
                     <Form>
                         <Form.Field>
                             <label>First Name</label>
-                            <input placeholder='First Name' name='First' type='text' pattern='[A-Za-z]' onChange={this.handleChange}  />
+                            <input placeholder='First Name' name='First' type='text'  onChange={this.handleChange}  />
                             </Form.Field>
                         <Form.Field>
                             <label>Last Name</label>
