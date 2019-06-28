@@ -3,17 +3,15 @@ import axios from 'axios'
 import faker from 'faker'
 import Usermodal from './userModal'
 import Clients from './search'
-import Signup from './signup'
+import Clientlist from './clientlist'
 import '../index.css';
 import {
   Button,
   Header,
-  Image,
   Menu,
   Grid,
   Segment,
   Sidebar,
-  Icon,
   GridRow,
 } from 'semantic-ui-react'
 
@@ -32,11 +30,10 @@ export default class Dashboard extends Component {
 
 
 
-  componentDidMount(){
-    axios.get(`http://localhost:4000/customers`)
-    .then(res => {this.setState({
-      Clients: res.data
-    })})
+
+
+  componentWillUpdate() {
+      console.log('COMPONENT WILL MOUNT')
   }
 
     render() {
@@ -44,11 +41,8 @@ export default class Dashboard extends Component {
         return (
             <Segment inverted >
                 <Header as='h1' id='heading' align='center'>CSR DASHBOARD</Header>
-            <Button color='black' size='large' name='align justify' onClick={this.handleHide}>Menu</Button>
-                <Segment inverted align='right'>
-                <Usermodal  />
-                </Segment>
-            
+                <Button color='black' size='large' name='align justify' onClick={this.handleHide}>Menu</Button>
+                <Usermodal />
             <Sidebar
             as={Menu}
             animation='overlay'
@@ -62,18 +56,14 @@ export default class Dashboard extends Component {
                 </Grid.Column>
            </Sidebar>
             <Segment columns={4} >
-              <Clients/>
+              <Clients />
             </Segment>
             <Segment>
               <Grid.Column align='center'>
                 <GridRow>
                   <h1>Client List</h1>
                 </GridRow>
-                <Grid.Row>{this.state.Clients.map((client) => {
-                  return(<Grid.Row>
-                    <h1>{client.First}</h1>
-                  </Grid.Row>)
-                })}</Grid.Row>
+                <Clientlist />
               </Grid.Column>
             </Segment>
 
