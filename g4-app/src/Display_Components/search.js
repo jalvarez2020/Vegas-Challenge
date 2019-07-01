@@ -1,8 +1,7 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import faker from 'faker'
-import { Search, Grid, Segment, Header, Card, Image} from 'semantic-ui-react'
-import Dashboard from './dashboard.js';
+import { Search, Grid, Segment, Header, Card, Image} from 'semantic-ui-react' 
 const clients = require('../customers.json')
 
 //Brings in customers and performs search

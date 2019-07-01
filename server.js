@@ -14,7 +14,7 @@ server.get('/customers', (req, res) => {
 
 //returns single customer
 
-server.get('/customers/:id', (req, res) => {
+server.get('/customer/:id', (req, res) => {
     const id = req.params.id;
     db.findById(id).then(customer => {
         res.status(200).json(customer);
@@ -24,7 +24,7 @@ server.get('/customers/:id', (req, res) => {
 
 //updates  customer information
 
-server.put('customers/update/:id', (req, res) => {
+server.put('customer/update/:id', (req, res) => {
     const id = req.params.id;
     const customer = req.body;
     db.updateCustomer(id, customer).then(updateCustomer => {
@@ -35,7 +35,7 @@ server.put('customers/update/:id', (req, res) => {
 
 //Adds New Customer
 
-server.post('/customers/signup', (req, res) => {
+server.post('/customer/signup', (req, res) => {
     const signup = req.body;
     db.insertNew(signup).then(newCustomer => {
         res.status(200).send({message: "New customer successfully added."})
@@ -44,7 +44,7 @@ server.post('/customers/signup', (req, res) => {
 
 //remove customer
 
-server.delete('customers/remove/:id', (req, res) => {
+server.delete('/customer/:id', (req, res) => {
     const id = req.params.id;
     db.removeCustomer(id).then(response => {
         res.status(200).json({message: `Customer with ${id} has been removed.`})

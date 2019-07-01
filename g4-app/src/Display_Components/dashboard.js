@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import faker from 'faker'
 import Usermodal from './userModal'
 import Clients from './search'
 import Clientlist from './clientlist'

@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Route, Redirect } from 'react-router'
+import {Redirect} from 'react-router-dom'
 import {
   Button,
   Container,
-  Header,
   Form,
-  Checkbox
+  Checkbox,
 } from 'semantic-ui-react'
 const publicIp = require('public-ip');
 
@@ -40,8 +39,8 @@ export default class Signup extends Component {
             IP: this.state.IP
         }
         !this.state.Checkbox ? alert('Please agree to terms and conditions') :
-        axios.post(`http://localhost:4000/customers/signup`, newClient)
-        .then(res => { alert("Successfully signed up client") })
+        axios.post(`http://localhost:4000/customer/signup`, newClient)
+        .then(res => { return( <Redirect to={'/'} /> )  })
 
     }
 

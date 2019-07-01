@@ -5,6 +5,7 @@ import Dashboard from './Display_Components/dashboard'
 import Clients from './Display_Components/search'
 import Signup from './Display_Components/signup'
 import Usermodal from './Display_Components/userModal'
+import Clientlist from './Display_Components/clientlist'
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
     <Route path='/customer/search' exact 
     render={ props => <Clients {...props} />}
     />
+
+    <Route path='/customers' exact render={ props => <Clientlist {...props} /> } />
     </div>
   );
 }
