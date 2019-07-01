@@ -51,16 +51,15 @@ export default class Clientlist extends Component {
                              <Table.Cell>{client.Last}</Table.Cell>
                              <Table.Cell>{client.Email}</Table.Cell>
                              <Table.Cell>{client.IP}</Table.Cell>
-                             <Table.Cell>{client.Latitude +' '+ client.Longitude}</Table.Cell>
+                             <Table.Cell>{client.Longitude +' , '+ client.Latitude}</Table.Cell>
                              <Table.Cell>{client.SignUpDate}</Table.Cell>
                               <Table.Cell>
-                                 <Button color='green'>Update</Button>
-                                 <Button onClick={this.handleRemove} id={client.Id} color='red'>Remove</Button>
+                                 <Button size='small' color='green'>Update</Button>
+                                 <Button size='small' onClick={this.handleRemove} id={client.Id} color='red'>Remove</Button>
                               </Table.Cell>
                           </Table.Row>
                   )
               })}
-                
               </Table.Body>
           </Table>
     )
