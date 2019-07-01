@@ -64,7 +64,6 @@ export default class Dashboard extends Component {
                 <Clientlist />
               </Grid.Column>
             </Segment>
-
             </Segment>
         )
     }

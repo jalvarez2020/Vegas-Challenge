@@ -15,17 +15,6 @@ function App() {
     render={ props => <Dashboard {...props} />}
     />  
     
-    <Route path='/customer/signup' exact 
-    render={ props => <Signup {...props} />}
-    />
-
-    <Route path='/customer/userprofile' exact render={props => <Usermodal {...props}  />} />
-    
-    <Route path='/customer/search' exact 
-    render={ props => <Clients {...props} />}
-    />
-
-    <Route path='/customers' exact render={ props => <Clientlist {...props} /> } />
     </div>
   );
 }

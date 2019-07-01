@@ -47,7 +47,7 @@ server.post('/customer/signup', (req, res) => {
 server.delete('/customer/:id', (req, res) => {
     const id = req.params.id;
     db.removeCustomer(id).then(response => {
-        res.status(200).json({message: `Customer with ${id} has been removed.`})
+        res.status(200).json({message: `Customer with id ${id} has been removed.`})
     })
     .catch(error => {message: error})
 })

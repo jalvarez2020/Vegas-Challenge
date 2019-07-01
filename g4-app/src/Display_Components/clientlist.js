@@ -4,7 +4,8 @@ import {Table, Button } from 'semantic-ui-react'
 
 export default class clientlist extends Component {
     state = {
-        Client: []
+        Client: [],
+        Update: false
     }
 
     componentWillMount(){
@@ -15,14 +16,19 @@ export default class clientlist extends Component {
       }
 
     handleRemove = (e) => {
-      const id = e.target.innerHTML  
-      console.log("HANDEL REMOVE", e.target.innerHTML)
+      const id = e.target.id
         axios.delete(`http://localhost:4000/customer/${id}`)
-        .then(res => alert(res))
+        .then(res => console.log(res.data.message))
+      this.setState({
+        Update: true
+      })
     }
 
     render() {
-        return (
+      if(this.state.Update) {
+        return( window.location.reload() )
+      } 
+      return (
             <Table celled>
             <Table.Header align='center'>
               <Table.Row>
@@ -45,7 +51,7 @@ export default class clientlist extends Component {
                              <Table.Cell>{client.SignUpDate}</Table.Cell>
                               <Table.Cell>
                                  <Button color='green'>Update</Button>
-                                 <Button onClick={this.handleRemove} color='red'>Remove</Button>
+                                 <Button onClick={this.handleRemove} id={client.Id} color='red'>Remove</Button>
                               </Table.Cell>
                           </Table.Row>
                   )

@@ -50,7 +50,7 @@ export default class Clients extends Component {
         isLoading: false,
         results: _.filter(source, isMatch),
       })
-    }, 6000)
+    }, 2500)
   }
 
   render() {
