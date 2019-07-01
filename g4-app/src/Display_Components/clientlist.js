@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import {Table, Button } from 'semantic-ui-react'
 
-export default class clientlist extends Component {
+export default class Clientlist extends Component {
     state = {
         Client: [],
         Update: false
@@ -36,6 +36,8 @@ export default class clientlist extends Component {
                 <Table.HeaderCell>First</Table.HeaderCell>
                 <Table.HeaderCell>Last</Table.HeaderCell>
                 <Table.HeaderCell>Email</Table.HeaderCell>
+                <Table.HeaderCell>IP</Table.HeaderCell>
+                <Table.HeaderCell>Location</Table.HeaderCell>
                 <Table.HeaderCell>Customer Since</Table.HeaderCell>
                 <Table.HeaderCell>Update/Remove</Table.HeaderCell>
               </Table.Row>
@@ -48,6 +50,8 @@ export default class clientlist extends Component {
                              <Table.Cell>{client.First}</Table.Cell>
                              <Table.Cell>{client.Last}</Table.Cell>
                              <Table.Cell>{client.Email}</Table.Cell>
+                             <Table.Cell>{client.IP}</Table.Cell>
+                             <Table.Cell>{client.Latitude +' '+ client.Longitude}</Table.Cell>
                              <Table.Cell>{client.SignUpDate}</Table.Cell>
                               <Table.Cell>
                                  <Button color='green'>Update</Button>

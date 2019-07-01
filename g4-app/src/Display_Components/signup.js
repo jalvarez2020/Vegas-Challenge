@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
 import {
   Button,
   Container,
   Form,
   Checkbox,
 } from 'semantic-ui-react'
-const publicIp = require('public-ip');
 
 export default class Signup extends Component {
     state = {
@@ -23,7 +21,8 @@ export default class Signup extends Component {
     handleChecked = (e) => {
         if(this.state.Checkbox === false) {
             this.setState({
-                Checkbox: true
+                Checkbox: true,
+                Update: false
             })
             
         }
@@ -40,7 +39,7 @@ export default class Signup extends Component {
         }
         !this.state.Checkbox ? alert('Please agree to terms and conditions') :
         axios.post(`http://localhost:4000/customer/signup`, newClient)
-        .then(res => { return( <Redirect to={'/'} /> )  })
+        .then(res => {this.setState({ Update: true })})
 
     }
 
@@ -48,7 +47,6 @@ export default class Signup extends Component {
     componentDidMount() {
         !navigator.geolocation.getCurrentPosition ? alert('GPS location not supported on this browser') :
         navigator.geolocation.getCurrentPosition(position => {
-            console.log(position)
             this.setState({
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude,
@@ -57,20 +55,17 @@ export default class Signup extends Component {
         axios.get(`https://api.ipify.org?format=json`).then(res => {
             const IP = res.data.ip
            const clientIP = IP.toString()
-            console.log('CLIENT IP', clientIP)
             this.setState({
                 IP: clientIP
             })
         })
-        
-        
     }
     render() {
-        console.log(publicIp)
-        console.log("component", this.state)
+        if(this.state.Update) {
+            return( window.location.reload() )
+          }
         return (
             <div>
-           
                 <Container text width={5}>
                     <Form>
                         <Form.Field>
