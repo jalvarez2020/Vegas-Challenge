@@ -25,17 +25,12 @@ export default class Clients extends Component {
 
   handleResultSelect = (e, { result
   }) => {
-    console.log('SELECTION', result)
     this.setState({
       value: result.title,
       selection: result
 
     })
   } 
-
-  handleOnClick = (e) => {
-    // console.log(this.state.client)
-  }
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value })

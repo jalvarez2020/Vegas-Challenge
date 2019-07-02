@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Clientupdate from './clientupdate'
 import {Table, Button } from 'semantic-ui-react'
 import ClientModal from './clientModal';
 
