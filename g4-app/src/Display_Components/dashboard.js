@@ -27,13 +27,6 @@ export default class Dashboard extends Component {
   handleSidebarHide = () => this.setState({show: false})
 
 
-
-
-
-  componentWillUpdate() {
-      console.log('COMPONENT WILL MOUNT')
-  }
-
     render() {
       const { show } = this.state
         return (

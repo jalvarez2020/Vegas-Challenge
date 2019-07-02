@@ -24,11 +24,11 @@ server.get('/customer/:id', (req, res) => {
 
 //updates  customer information
 
-server.put('customer/update/:id', (req, res) => {
+server.put('/customer/update/:id', (req, res) => {
     const id = req.params.id;
     const customer = req.body;
     db.updateCustomer(id, customer).then(updateCustomer => {
-        res.status(200).json({message: "Customer information updated."})
+        res.status(201).json({message: "Customer information updated."})
     })
     .catch(error => {message: error})
 })
