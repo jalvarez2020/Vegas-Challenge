@@ -7,9 +7,7 @@ export default class Clientupdate extends Component {
         update: false,
         client: this.props.client
       }
-
- 
-
+      
       handleUpdate = (e) => {
         const id = this.props.client.Id
         const client = {...this.state.client}

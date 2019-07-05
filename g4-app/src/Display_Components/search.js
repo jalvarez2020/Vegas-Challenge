@@ -49,6 +49,7 @@ export default class Clients extends Component {
   }
 
   render() {
+    console.log("SELECTION", this.state)
     const { isLoading, value, results } = this.state
     if(this.state.selection === '') {
       return (
@@ -65,7 +66,6 @@ export default class Clients extends Component {
             results={results}
             value={value}
             name={value}
-            {...this.props}
             onClick={this.handleOnClick}
           />
         </Grid.Column>
@@ -93,7 +93,7 @@ export default class Clients extends Component {
         <Grid.Column width={16} >
           <Segment>
            <Header>Client Profile</Header>
-           <Card>
+           <Card key={this.state.selection.id}>
                <Image src={faker.internet.avatar()}></Image>
             <Card.Content>
                     <Card.Header>{this.state.value}</Card.Header>
