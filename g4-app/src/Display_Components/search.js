@@ -50,7 +50,7 @@ export default class Clients extends Component {
 
   render() {
     console.log("SELECTION", this.state)
-    const { isLoading, value, results } = this.state
+    const { isLoading, value, results, client} = this.state
     if(this.state.selection === '') {
       return (
       <Grid textAlign='center'>
@@ -60,7 +60,7 @@ export default class Clients extends Component {
             loading={isLoading}
             onResultSelect={this.handleResultSelect}
             placeholder='Search for Customers'
-            onSearchChange={_.debounce(this.handleSearchChange, 5000, {
+            onSearchChange={_.debounce(this.handleSearchChange, 500, {
               leading: true,
             } )}
             results={results}
@@ -86,7 +86,6 @@ export default class Clients extends Component {
             } )}
             results={results}
             value={value}
-            {...this.props}
             onMouseDown={this.handleOnClick}
           />
         </Grid.Column>
@@ -95,17 +94,17 @@ export default class Clients extends Component {
            <Header>Client Profile</Header>
            <Card key={this.state.selection.id}>
                <Image src={faker.internet.avatar()}></Image>
-            <Card.Content>
-                    <Card.Header>{this.state.value}</Card.Header>
-                    <Card.Meta>
-                        <span className='date'>Joined in {this.state.selection.created_at}</span>
-                    </Card.Meta>
-                    <Card.Description>
-                        {this.state.value} is a musician living in Nashville.
-                    </Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-            </Card.Content>
+              <Card.Content>
+                      <Card.Header>{this.state.value}</Card.Header>
+                      <Card.Meta>
+                          <span className='date'>Joined in {this.state.selection.created_at}</span>
+                      </Card.Meta>
+                      <Card.Description>
+                          {this.state.selection.title} is a musician living in Nashville.
+                      </Card.Description>
+                      </Card.Content>
+                      <Card.Content extra>
+              </Card.Content>
            </Card>
           </Segment>
         </Grid.Column>
