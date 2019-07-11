@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "faker": "^4.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.14",
     "public-ip": "^3.1.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
@@ -14,7 +14,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.87.2"
+    "semantic-ui-react": "^0.87.3"
   },
   "scripts": {
     "start": "react-scripts start",

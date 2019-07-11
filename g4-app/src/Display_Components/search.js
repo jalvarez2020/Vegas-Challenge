@@ -48,8 +48,9 @@ export default class Clients extends Component {
     }, 2500)
   }
 
+
   render() {
-    console.log("SELECTION", this.state)
+    console.log("SELECTION",  this.state.clientID )
     const { isLoading, value, results, client} = this.state
     if(this.state.selection === '') {
       return (
