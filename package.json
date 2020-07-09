@@ -8,7 +8,7 @@
   "dependencies": {
     "@hapi/cryptiles": "^4.2.0",
     "cors": "^2.8.5",
-    "csv-parser": "^2.3.0",
+    "csv-parser": "^2.3.3",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "helmet": "^3.18.0",
