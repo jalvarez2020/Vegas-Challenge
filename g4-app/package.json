@@ -7,7 +7,7 @@
     "axios": "^0.19.0",
     "eslint-utils": "^1.4.1",
     "faker": "^4.1.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "public-ip": "^3.1.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
